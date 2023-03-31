@@ -1,4 +1,7 @@
-<div class="datauploader-container">
-  <input type="file" class="input-fileuploader" (change)="ReadExcel($event)">
-  <button type="submit" class="button-fileuploader" (click)="SendExcel()">Subir archivo</button>
-</div>
+<form class="datauploader-container" (submit)="onSubmit()">
+  <input type="file" class="input-fileuploader" (change)=" onFileChange($event)">
+  <button type="submit" class="button-fileuploader">Subir archivo</button>
+</form>
+
+
+

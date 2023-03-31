@@ -13,6 +13,6 @@ export class DataUploaderService {
 
   upload(ExcelData: any): Observable<any> {
     console.log(ExcelData);
-    return this.http.post('http://localhost:3000/columnas', ExcelData);
+    return this.http.post('http://127.0.0.1:8000/upload/', ExcelData);
   }
 }

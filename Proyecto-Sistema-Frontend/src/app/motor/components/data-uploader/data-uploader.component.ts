@@ -8,34 +8,24 @@ import { DataUploaderService } from '../../services/data-uploader/data-uploader.
   styleUrls: ['./data-uploader.component.scss'],
 })
 export class DataUploaderComponent {
-  ExcelData: any;
+  
+  fileToUpload: File | null = null;
 
   constructor(private motorservice: DataUploaderService) {}
 
-  ReadExcel(event: any) {
-    let file = event.target.files[0];
-    let fileReader = new FileReader();
-    fileReader.readAsArrayBuffer(file);
-
-    fileReader.onload = (e) => {
-      const arrayBuffer = fileReader.result as ArrayBuffer;
-      const data = new Uint8Array(arrayBuffer);
-      const workBook = XLSX.read(data, { type: 'array' });
-      let sheetNames = workBook.SheetNames;
-      let worksheet = workBook.Sheets[sheetNames[0]];
-      this.ExcelData = XLSX.utils.sheet_to_json(worksheet);
-      console.log(this.ExcelData);
-    };
+  onFileChange(event: any) {
+    this.fileToUpload = event.target.files.item(0);
+    console.log(this.fileToUpload);
   }
 
-  SendExcel() {
-    this.motorservice.upload(this.ExcelData).subscribe(
-      (response) => {
-        console.log('El archivo Excel ha sido cargado correctamente', response);
-      },
-      (error) => {
-        console.log('Error al cargar el archivo de Excel', error);
-      }
-    );
+  onSubmit() {
+    if (this.fileToUpload) {
+      const formData: FormData = new FormData();
+      formData.append('file', this.fileToUpload, this.fileToUpload.name);
+    }
+    this.motorservice.upload(this.fileToUpload) 
+
   }
+
+
 }
