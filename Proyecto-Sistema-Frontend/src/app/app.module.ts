@@ -7,7 +7,10 @@ import { AppComponent } from './app.component';
 import { SecurityModule } from './motor/security/security.module';
 
 /* Services */
-import { MotorService } from './motor/services/motor.service';
+import { MainChartService } from './motor/services/main-chart/main-chart.service';
+import { DataUploaderService } from './motor/services/data-uploader/data-uploader.service';
+
+
 
 
 @NgModule({
@@ -20,7 +23,8 @@ import { MotorService } from './motor/services/motor.service';
   ],
   providers: [
     /* Services */
-    MotorService,
+    MainChartService,
+    DataUploaderService,
   ],
   bootstrap: [AppComponent],
 })

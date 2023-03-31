@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MotorService } from './motor.service';
+import { DataUploaderService } from './data-uploader.service';
 
-describe('MotorService', () => {
-  let service: MotorService;
+describe('DataUploaderService', () => {
+  let service: DataUploaderService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MotorService);
+    service = TestBed.inject(DataUploaderService);
   });
 
   it('should be created', () => {
