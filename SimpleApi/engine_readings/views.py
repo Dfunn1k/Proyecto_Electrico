@@ -18,7 +18,7 @@ def read_and_store_data(file):
     # Iterar sobre las filas del DataFrame
     for index, row in df.iterrows():
         # Buscar o crear el objeto Engine
-        engine, _ = Engine.objects.get_or_create(name='SuperMotors')
+        engine, _ = Engine.objects.get_or_create(name='JoseMotors')
 
         # Crear y guardar el objeto Reading
         reading = Reading(MagV1=row['MagV1'],MagV2=row['MagV2'],MagV3=row['MagV3'],engine=engine)

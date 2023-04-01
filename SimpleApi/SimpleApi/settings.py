@@ -138,3 +138,6 @@ CORS_ALLOW_HEADERS = ['accept', 'accept-encoding', 'authorization',    'content-
 
 CORS_ORIGIN_WHITELIST = ['http://localhost:4200',]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200", # Asegúrate de cambiar esto a la URL de tu aplicación Angular
+]
