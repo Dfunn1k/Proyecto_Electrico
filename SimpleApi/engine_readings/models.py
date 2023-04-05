@@ -18,5 +18,5 @@ class Reading(models.Model):
     engine = models.ForeignKey(Engine, on_delete= models.CASCADE)
 
     def __str__(self):
-        return f'{self.engine}: {self.pk}-{self.value}'
+        return f'{self.engine}: {self.pk}-({self.MagV1},{self.MagV2},{self.MagV3})'
 
