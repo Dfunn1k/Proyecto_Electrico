@@ -7,6 +7,14 @@ from rest_framework.generics import ListAPIView
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.parsers import FileUploadParser
+#login
+from django.contrib.auth import authenticate, login
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .serializers import MyTokenObtainPairSerializer
+#csrf
+#from django.views.decorators.csrf import csrf_exempt
+
+
 
 #
 import pandas as pd
@@ -42,3 +50,19 @@ class FileUploadView(APIView):
         file = request.data['file']
         read_and_store_data(file)
         return Response({'status': 'success'}, status=status.HTTP_200_OK)
+
+class LoginView(APIView):
+    #@csrf_exempt
+    def post(self, request):
+        username = request.data.get('username')
+        password = request.data.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return Response({'detail': 'Inicio de sesión exitoso.'})
+        else:
+            return Response({'error': 'Nombre de usuario o contraseña incorrectos.'}, status=status.HTTP_400_BAD_REQUEST)
+        
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
