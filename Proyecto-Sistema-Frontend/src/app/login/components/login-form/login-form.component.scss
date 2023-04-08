@@ -1,5 +1,7 @@
 @import '../../../variables';
-
+* {
+  outline: dotted 1px;
+}
 
 .form {
   width: 300px;
@@ -15,15 +17,18 @@
   align-items: center;
   gap: 1rem;
   border: 0;
-  margin: 20px 0;
+  margin: 30px
 }
 
 .row1,
-.row2 {
+.row2,
+.row3 {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
+/* Button Sign In*/
 .sign_in {
   width: 150px;
   padding: 10px;
@@ -36,6 +41,14 @@
 input {
   border-radius: 5px;
   padding: 5px;
+}
+
+.error-message {
+  text-align: center;
+
+  color: red;
+  font-weight: bold;
+  font-size: 13px;
 }
 
 

@@ -10,7 +10,7 @@ export class LoginFormComponent{
   user: string = '';
   password: string = '';
 
-  constructor(private loginformservice: LoginFormService) {}
+  constructor(public loginformservice: LoginFormService) {}
 
   inputChange1(event: any) {
     this.user = event.target.value;
