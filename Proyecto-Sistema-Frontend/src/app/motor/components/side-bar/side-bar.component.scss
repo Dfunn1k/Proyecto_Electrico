@@ -1,0 +1,18 @@
+:host {
+  flex: 1;
+}
+
+.sidebar-container {
+  min-width: 250px;
+  height: 100%;
+  display: flex; 
+}
+
+
+.sidebar-containt {
+  background-color: white;
+  width: 100%;
+  margin: 10px;
+  border: 1px solid #dcd7d7;
+  border-radius: 5px;
+}

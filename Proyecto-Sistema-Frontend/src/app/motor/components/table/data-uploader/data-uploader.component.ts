@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import * as XLSX from 'xlsx';
-import { DataUploaderService } from '../../services/data-uploader/data-uploader.service'
+import { DataUploaderService } from '../../../services/data-uploader/data-uploader.service'
 
 @Component({
   selector: 'app-data-uploader',
@@ -26,6 +26,5 @@ export class DataUploaderComponent {
     this.motorservice.upload(this.fileToUpload) 
 
   }
-
 
 }

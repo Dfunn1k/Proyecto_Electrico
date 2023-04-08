@@ -1,4 +1,20 @@
-<div class="data-container">
-  <app-main-chart></app-main-chart>
-  <app-data-uploader></app-data-uploader>
+<!-- <div class="data-container">
+  <div class="uno">UNO</div>
+  <div class="dos">DOS</div>
+  <div class="tres">TRES</div>
+</div> -->
+
+<nav class="nav-bar">
+  <a routerLink="/login">Login </a>
+  <a routerLink="/dashboardmotor">Dashboard</a>
+</nav>
+<div class="navegation">
+  <button class="button-motor button-navegation">Motor</button>
+  <button class="button-calidad button-navegation">Calidad</button>
 </div>
+  <div class="data-container">
+    <app-side-bar></app-side-bar>
+    <app-table></app-table>
+    <app-engine-buttons></app-engine-buttons>
+  </div>
+

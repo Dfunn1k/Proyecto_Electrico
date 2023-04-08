@@ -1,3 +1,42 @@
-.data-container {
-  border: 1px solid red;
+// *{
+//   outline: 1px dotted;
+// }
+.nav-bar {
+  background-color: rgb(13, 146, 199);
+  padding: 20px 0;
 }
+
+.navegation {
+  max-width: 1440px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center; 
+}
+
+.button-navegation {
+  padding: 10px 150px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-motor  {
+  color: grey;
+  border: 1px solid grey;
+}
+
+.button-calidad  {
+  background-color: rgb(13, 146, 199);
+  border: 1px solid rgb(13, 146, 199);
+}
+
+.data-container {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: auto;
+  max-width: 1440px;
+  display: flex;
+  // background-color: red;
+  overflow-x: auto;
+  background-color: rgb(248, 246, 246);
+}
+

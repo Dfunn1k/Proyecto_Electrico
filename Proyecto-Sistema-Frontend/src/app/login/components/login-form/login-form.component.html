@@ -1,7 +1,16 @@
+<form class="form" (submit)="onSubmit($event)">
+  <fieldset class="fieldset">
+    <h2>Inicio de sesión</h2>
+    <div class="row1">
+      <label for="name">Usuario</label>
+      <input type="text" id="name" (change)="inputChange1($event)"/>
+    </div>
+    <div class="row2">
+      <label for="password">Contraseña</label>
+      <input type="text" id="password" (change)="inputChange2($event)"/>
+    </div>
+    <button type="submit" class="sign_in">Iniciar sesion</button>
+  </fieldset>
+</form>
 
 
-
-<div>
-  <label for=""></label>
-  <input type="text">
-</div>

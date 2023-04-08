@@ -1,0 +1,33 @@
+* {
+  outline: dotted 1px;
+  margin: 0;
+}
+
+.tabletwo-container {
+  min-width: 700px;
+  border: 1px solid green;
+  max-width: 100%;
+  display: flex;
+}
+
+h1 {
+  width: 500px;
+}
+
+
+.stats {
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-row {
+  display: flex;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0 5px 0;
+}

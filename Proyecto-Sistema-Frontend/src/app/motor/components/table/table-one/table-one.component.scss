@@ -1,0 +1,26 @@
+* {
+  outline: dotted 1px;
+  margin: 0;
+}
+
+.tableone-container{
+  min-width: 700px;
+  display: flex;
+  max-width: 100%;
+}
+
+.stats {
+  min-width: 150px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0 5px 0;
+
+}

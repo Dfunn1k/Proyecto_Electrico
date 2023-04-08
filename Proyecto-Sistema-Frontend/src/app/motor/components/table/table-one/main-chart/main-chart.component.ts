@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
-import { MainChartService } from '../../services/main-chart/main-chart.service'
-
+import { MainChartService } from '../../../../services/main-chart/main-chart.service';
+// import { MainChartService } from '../../../services/main-chart/main-chart.service'
 @Component({
   selector: 'app-main-chart',
   templateUrl: './main-chart.component.html',
@@ -18,16 +18,15 @@ export class MainChartComponent implements OnInit {
     Chart.register(...registerables);
 
     this.chart.printText().subscribe((data: any) => {
-
+      console.log(data, "1");
       const filtered1 = data[0].lecturas.map((item: any) => item.MagV1)
       console.log(filtered1 , "second");
       const filtered2 = data[0].lecturas.map((item: any) => item.MagV2)
       const filtered3 = data[0].lecturas.map((item: any) => item.MagV3)
       const labels = data[0].lecturas.map((item: any) => item.id)
-      
+      console.log(data, "2");
       this.chart.printchart(filtered1, filtered2, filtered3, labels, this.id)
     });
-
   }
 }
 

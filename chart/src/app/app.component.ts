@@ -40,6 +40,7 @@ export class AppComponent {
 
   onFileChange(event: any) {
     this.fileToUpload = event.target.files.item(0);
+    console.log(this.fileToUpload);
   }
 
   onSubmit(event: Event) {

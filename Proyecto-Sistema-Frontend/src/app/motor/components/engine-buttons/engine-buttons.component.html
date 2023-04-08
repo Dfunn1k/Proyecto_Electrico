@@ -1,0 +1,8 @@
+<div class="engine-buttons">
+  <button class="engine-button" (click)="openModal()">Calidad de Energia</button>
+  <app-power-quality *ngIf="modalStats" (close)="closeModal()"></app-power-quality>
+  <button class="engine-button">Rendimiento de la maquina</button>
+  <button class="engine-button">Corrientes</button>
+  <button class="engine-button">Espectros</button>
+</div>
+

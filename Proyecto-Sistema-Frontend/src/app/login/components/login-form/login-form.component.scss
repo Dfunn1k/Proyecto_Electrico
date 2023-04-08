@@ -1,0 +1,41 @@
+@import '../../../variables';
+
+
+.form {
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid;
+  height: auto;
+}
+
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border: 0;
+  margin: 20px 0;
+}
+
+.row1,
+.row2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign_in {
+  width: 150px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: $primary-color;
+  color: white;
+}
+
+input {
+  border-radius: 5px;
+  padding: 5px;
+}
+
+

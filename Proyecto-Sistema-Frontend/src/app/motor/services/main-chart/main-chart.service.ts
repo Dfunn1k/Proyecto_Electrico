@@ -21,6 +21,7 @@ export class MainChartService {
     labels: any,
     id: any,
   ): any {
+    console.log(filtered1);
     return new Chart(id, {
       type: 'line',
       data: {
@@ -32,7 +33,7 @@ export class MainChartService {
             pointRadius: 0,
             borderColor: '#dcdf00',
             tension: 0.3,
-            borderWidth: 2,
+            borderWidth: 1,
             data: filtered1,
           },
           {
@@ -41,7 +42,7 @@ export class MainChartService {
             pointRadius: 0,
             borderColor: 'red',
             tension: 0.3,
-            borderWidth: 2,
+            borderWidth: 1,
             data: filtered2
           },
           {
@@ -50,6 +51,7 @@ export class MainChartService {
             pointRadius: 0,
             borderColor: 'blue',
             tension: 0.3,
+            borderWidth: 1,
             data: filtered3,
           },
         ],
