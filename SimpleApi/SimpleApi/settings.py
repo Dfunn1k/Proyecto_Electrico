@@ -142,3 +142,10 @@ CORS_ORIGIN_WHITELIST = ['http://localhost:4200',]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200", # Asegúrate de cambiar esto a la URL de tu aplicación Angular
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    #'DEFAULT_PERMISSION_CLASSES': ("rest_framework.permissions.IsAuthenticated",),
+}

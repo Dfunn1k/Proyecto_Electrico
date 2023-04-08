@@ -9,14 +9,14 @@ from rest_framework.views import APIView
 from rest_framework.parsers import FileUploadParser
 #login
 from django.contrib.auth import authenticate, login
-from rest_framework_simplejwt.views import TokenObtainPairView
-from .serializers import MyTokenObtainPairSerializer
-#csrf
-#from django.views.decorators.csrf import csrf_exempt
-
-
-
+#permisos
+from .permissions import IsMemberOfGroupAnalisis, IsMemberOfGroupCalidad
+from rest_framework import permissions
 #
+from django.contrib.auth.models import User, Group
+
+
+
 import pandas as pd
 from django_pandas.io import read_frame
 
@@ -36,11 +36,13 @@ def read_and_store_data(file):
 # Create your views here.
 
 class EngineView(ListAPIView):
+    permission_classes = [permissions.IsAuthenticated, IsMemberOfGroupAnalisis]
     queryset = Engine.objects.all()
     serializer_class = EngineSerializer
 
 
 class FileUploadView(APIView):
+    permission_classes = [permissions.IsAuthenticated, IsMemberOfGroupAnalisis]
     parser_class = (FileUploadParser,)
 
     def post(self, request, *args, **kwargs):
@@ -52,7 +54,6 @@ class FileUploadView(APIView):
         return Response({'status': 'success'}, status=status.HTTP_200_OK)
 
 class LoginView(APIView):
-    #@csrf_exempt
     def post(self, request):
         username = request.data.get('username')
         password = request.data.get('password')
@@ -62,7 +63,17 @@ class LoginView(APIView):
             return Response({'detail': 'Inicio de sesión exitoso.'})
         else:
             return Response({'error': 'Nombre de usuario o contraseña incorrectos.'}, status=status.HTTP_400_BAD_REQUEST)
-        
 
-class MyTokenObtainPairView(TokenObtainPairView):
-    serializer_class = MyTokenObtainPairSerializer
+
+class CalidadEnergia(APIView):
+    permission_classes = [permissions.IsAuthenticated, IsMemberOfGroupCalidad]
+    def get(self, request):
+        return Response({'detail': 'Este usuario tiene permisos para calidad de energia'})
+
+
+class UserGroupView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+    def get(self, request, username):
+        user = User.objects.get(username=username)
+        group = user.groups.first()
+        return Response({'group': group.name})
