@@ -2,7 +2,8 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';import {trigger,state,style,animate,transition}from '@angular/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import {trigger,state,style,animate,transition}from '@angular/animations';
 
 /* Modules*/
 import { SecurityModule } from './motor/security/security.module';
@@ -21,8 +22,8 @@ import { LoginFormService } from './login/services/login-form.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    /* Modules */
+    // BrowserAnimationsModule,
+    // Modules 
     SecurityModule,
   ],
   providers: [
@@ -30,7 +31,7 @@ import { LoginFormService } from './login/services/login-form.service';
     MainChartService,
     DataUploaderService,
     LoginFormService,
-  ],
+   ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

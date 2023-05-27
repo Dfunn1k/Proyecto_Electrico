@@ -6,6 +6,7 @@ import * as _ from 'lodash';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   title = 'Prueba';
   
